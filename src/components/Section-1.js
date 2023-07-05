@@ -31,7 +31,7 @@ const Section1 = () => {
   ];
   return (
     <Wrapper className="container">
-      <Header />
+      <Header  data-aos="fade-up" />
       <Carousel data={carouselData} />
     </Wrapper>
   );

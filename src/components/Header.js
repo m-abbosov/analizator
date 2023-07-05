@@ -2,11 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import {
   Button,
+  FormControl,
+  FormLabel,
+  Input,
   Link,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 import Logo from "../assets/images/logo.png";
@@ -19,6 +30,9 @@ import FlagIconUz from "../assets/icons/flag_Uzbekistan.svg";
 import FacebookIcon from "../assets/icons/facebook-app.svg";
 
 const Header = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
   return (
     <Wrapper>
       <div className="header-top">
@@ -46,7 +60,7 @@ const Header = () => {
           <Button className="find-btn" size="xs">
             <img src={FindIcon} alt="" />
           </Button>
-          <Button className="facebook-btn" size="xs">
+          <Button onClick={onOpen} className="facebook-btn" size="xs">
             <img src={FacebookIcon} alt="" />
             <p>Мы на Facebook</p>
           </Button>
@@ -76,22 +90,53 @@ const Header = () => {
         <Link className="link" href="#">
           МАГАЗИН<div className="circle"></div>
         </Link>
-        <Link className="link active" href="#">
+        <Link className="link" href="#about">
           О КОМПАНИИ <div className="circle"></div>
         </Link>
-        <Link className="link" href="#">
+        <Link className="link" href="#product">
           ПРОДУКЦИЯ <div className="circle"></div>
         </Link>
-        <Link className="link" href="#">
+        <Link className="link" href="#services">
           УСЛУГИ <div className="circle"></div>
         </Link>
-        <Link className="link" href="#">
+        <Link className="link" href="#news">
           АКЦИИ И НОВОСТИ <div className="circle"></div>
         </Link>
         <Link className="link" href="#">
           ОБРАТНАЯ СВЯЗЬ <div className="circle"></div>
         </Link>
       </nav>
+
+      <Modal
+        initialFocusRef={initialRef}
+        finalFocusRef={finalRef}
+        isOpen={isOpen}
+        onClose={onClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Create your account</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>First name</FormLabel>
+              <Input ref={initialRef} placeholder="First name" />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Last name</FormLabel>
+              <Input placeholder="Last name" />
+            </FormControl>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3}>
+              Save
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Wrapper>
   );
 };

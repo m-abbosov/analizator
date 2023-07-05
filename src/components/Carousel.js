@@ -3,10 +3,6 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
 import ButtonLinear from "./ButtonLinear";
 
 const Carousel = ({ data }) => {
@@ -18,8 +14,6 @@ const Carousel = ({ data }) => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -30,11 +24,13 @@ const Carousel = ({ data }) => {
           return (
             <SwiperSlide key={item.id}>
               <div className="swiper-left">
-                <b>{item.title}</b>
-                <p>{item.text}</p>
-                <ButtonLinear>{item.buttonText}</ButtonLinear>
+                <b data-aos="fade-right">{item.title}</b>
+                <p data-aos="fade-right">{item.text}</p>
+                <ButtonLinear data-aos="fade-right">
+                  {item.buttonText}
+                </ButtonLinear>
               </div>
-              <img src={item.img} alt={item.title} />
+              <img data-aos="fade-left" src={item.img} alt={item.title} />
             </SwiperSlide>
           );
         })}

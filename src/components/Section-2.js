@@ -48,12 +48,14 @@ const Section2 = () => {
     },
   ];
   return (
-    <Wrapper className="container">
-      <h2 className="section-title">ПРОДУКЦИЯ</h2>
+    <Wrapper className="container" id="product">
+      <h2 data-aos="fade-up" className="section-title">
+        ПРОДУКЦИЯ
+      </h2>
       <ul className="card-list">
         {cardData.map((item) => {
           return (
-            <li key={item.id} className="card-list__item">
+            <li data-aos="flip-up" key={item.id} className="card-list__item">
               <img className="card-list__item-img" src={item.img} alt="" />
               <b className="card-list__item-title">{item.title}</b>
               <ButtonLinear>Посмотреть все</ButtonLinear>
@@ -62,7 +64,7 @@ const Section2 = () => {
         })}
       </ul>
 
-      <Link className="catalog-btn" href="#">
+      <Link data-aos="fade-up" className="catalog-btn" href="#">
         <p>Перейти в каталог нашей продукции </p>
         <img src={UpArrow} alt="" />
       </Link>
@@ -125,6 +127,7 @@ const Wrapper = styled.div`
     gap: 6px;
     justify-content: center;
     margin-top: 81px;
+    text-decoration: none !important;
 
     p {
       color: #0d4c93;
