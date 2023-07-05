@@ -11,8 +11,18 @@ a {
 
 body {
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
   padding: 0 280px;
+}
+
+.section-title {
+  color: #0d4c93;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import { styled } from "styled-components";
-import Header from "./components/Header";
-import Section1Back from "./assets/images/section-1.png";
+
+import Section2 from "./components/Section-2";
+import Section1 from "./components/Section-1";
+import Section3 from "./components/Section-3";
 
 function App() {
   return (
     <Wrapper>
-      <section className="section-1">
-        <Header />
-      </section>
+      <Section1 />
+      <Section2 />
+      <Section3 />
     </Wrapper>
   );
 }
@@ -19,13 +21,4 @@ const Wrapper = styled.div`
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-
-  .section-1 {
-    height: 100vh;
-    width: 100%;
-    background-image: url(${Section1Back});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 `;

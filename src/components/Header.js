@@ -21,60 +21,77 @@ import FacebookIcon from "../assets/icons/facebook-app.svg";
 const Header = () => {
   return (
     <Wrapper>
-      <div className="container">
-        <div className="header-top">
-          <div className="header-top__left">
-            <div className="icon-box">
-              <div className="icon-box__icon">
-                <img src={LocationIcon} alt="" />
-              </div>
-              <div className="icon-box__link">
-                <Link href="#">г.Ташкент, Чиланзар 10 квартал, дом 3/1</Link>
-              </div>
+      <div className="header-top">
+        <div className="header-top__left">
+          <div className="icon-box">
+            <div className="icon-box__icon">
+              <img src={LocationIcon} alt="" />
             </div>
-            <div className="icon-box">
-              <div className="icon-box__icon">
-                <img src={PhoneIcon} alt="" />
-              </div>
-              <div className="icon-box__link">
-                <Link href="tel:+998712766253">+998 71 276-62-53</Link>
-                <Link href="tel:+998712766254">+998 71 276-62-54</Link>
-              </div>
+            <div className="icon-box__link">
+              <Link href="#">г.Ташкент, Чиланзар 10 квартал, дом 3/1</Link>
             </div>
           </div>
-          <img className="logo" src={Logo} alt="" />
-          <div className="header-top__right">
-            <Button className="find-btn" size="xs">
-              <img src={FindIcon} alt="" />
-            </Button>
-            <Button className="facebook-btn" size="xs">
-              <img src={FacebookIcon} alt="" />
-              <p>Мы на Facebook</p>
-            </Button>
-            <Menu>
-              <MenuButton
-                className="lang-btn"
-                as={Button}
-                rightIcon={<img src={DownIcon} alt="" />}
-              >
-                <img className="flag-icon" src={FlagIconRus} alt="" />
-                <p>Русский</p>
-              </MenuButton>
-              <MenuList>
-                <MenuItem className="lang-item">
-                  <img className="flag-icon" src={FlagIconRus} alt="" />
-                  <p>Русский</p>
-                </MenuItem>
-                <MenuItem className="lang-item">
-                  <img className="flag-icon" src={FlagIconUz} alt="" />
-                  <p>Uzbek</p>
-                </MenuItem>
-              </MenuList>
-            </Menu>
+          <div className="icon-box">
+            <div className="icon-box__icon">
+              <img src={PhoneIcon} alt="" />
+            </div>
+            <div className="icon-box__link">
+              <Link href="tel:+998712766253">+998 71 276-62-53</Link>
+              <Link href="tel:+998712766254">+998 71 276-62-54</Link>
+            </div>
           </div>
         </div>
-        <nav className="links"></nav>
+        <img className="logo" src={Logo} alt="" />
+        <div className="header-top__right">
+          <Button className="find-btn" size="xs">
+            <img src={FindIcon} alt="" />
+          </Button>
+          <Button className="facebook-btn" size="xs">
+            <img src={FacebookIcon} alt="" />
+            <p>Мы на Facebook</p>
+          </Button>
+          <Menu>
+            <MenuButton
+              className="lang-btn"
+              as={Button}
+              rightIcon={<img src={DownIcon} alt="" />}
+            >
+              <img className="flag-icon" src={FlagIconRus} alt="" />
+              <p>Русский</p>
+            </MenuButton>
+            <MenuList>
+              <MenuItem className="lang-item">
+                <img className="flag-icon" src={FlagIconRus} alt="" />
+                <p>Русский</p>
+              </MenuItem>
+              <MenuItem className="lang-item">
+                <img className="flag-icon" src={FlagIconUz} alt="" />
+                <p>Uzbek</p>
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
       </div>
+      <nav className="links">
+        <Link className="link" href="#">
+          МАГАЗИН<div className="circle"></div>
+        </Link>
+        <Link className="link active" href="#">
+          О КОМПАНИИ <div className="circle"></div>
+        </Link>
+        <Link className="link" href="#">
+          ПРОДУКЦИЯ <div className="circle"></div>
+        </Link>
+        <Link className="link" href="#">
+          УСЛУГИ <div className="circle"></div>
+        </Link>
+        <Link className="link" href="#">
+          АКЦИИ И НОВОСТИ <div className="circle"></div>
+        </Link>
+        <Link className="link" href="#">
+          ОБРАТНАЯ СВЯЗЬ <div className="circle"></div>
+        </Link>
+      </nav>
     </Wrapper>
   );
 };
@@ -86,6 +103,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 45px;
   padding-top: 50px;
+  margin-bottom: 70px;
   .header-top {
     display: flex;
     align-items: center;
@@ -184,6 +202,10 @@ const Wrapper = styled.div`
           line-height: normal;
         }
       }
+      .chakra-menu__menu-list {
+        position: relative;
+        z-index: 99;
+      }
       .lang-item {
         display: flex;
         align-items: center;
@@ -191,6 +213,52 @@ const Wrapper = styled.div`
 
         .flag-icon {
           width: 35px;
+        }
+      }
+    }
+  }
+
+  .links {
+    width: 100%;
+    border-radius: 35px;
+    opacity: 0.8999999761581421;
+    background: #fff;
+
+    display: flex;
+    padding: 0 34px 0 49px;
+    justify-content: space-between;
+
+    .link {
+      position: relative;
+      padding: 24px 35px;
+      color: #0d4c93;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      cursor: pointer;
+      text-decoration: none;
+
+      .circle {
+        opacity: 0;
+        position: absolute;
+        top: 11px;
+        right: 11px;
+        content: "";
+        width: 12px !important;
+        height: 12px !important;
+        border-radius: 12px;
+        background: #00c9c9;
+      }
+
+      &:not(:last-child) {
+        border-right: 2px solid #f2f2f2;
+      }
+
+      &.active,
+      &:hover {
+        color: #00c9c9;
+        .circle {
+          opacity: 1;
         }
       }
     }
