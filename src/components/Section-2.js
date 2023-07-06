@@ -174,4 +174,46 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 770px) {
+    .card-list {
+      gap: 10px;
+      &__item {
+        width: 31%;
+        b {
+          font-size: 14px;
+        }
+        button {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    .card-list {
+      &__item {
+        width: 45%;
+
+        img {
+          height: 150px;
+        }
+
+        button {
+          width: 100%;
+          padding: 10px 0;
+        }
+      }
+    }
+
+    .catalog-btn {
+      p {
+        font-size: 14px;
+      }
+
+      img {
+        width: 20px;
+      }
+    }
+  }
 `;

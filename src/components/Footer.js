@@ -384,5 +384,77 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 770px) {
+    .footer-top {
+      &__left {
+        &-t {
+          .footer-contact {
+            gap: 10px;
+
+            button {
+              font-size: 12px;
+              height: 35px;
+              padding: 0;
+            }
+          }
+        }
+      }
+      &__right {
+        position: relative;
+        .footer-navs {
+          &:first-child {
+            position: absolute;
+            right: 25px;
+            bottom: 20px;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      .copy {
+        font-size: 14px;
+      }
+      &__right {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      &__left {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+
+        &-t {
+          margin-top: 20px;
+          margin-bottom: 0;
+          align-items: center;
+        }
+
+        &-b {
+          align-items: center;
+          gap: 10px;
+          p {
+            text-align: center;
+          }
+        }
+      }
+
+      &__right {
+        width: 100%;
+      }
+    }
+
+    .footer-bottom {
+      flex-direction: column-reverse;
+    }
   }
 `;

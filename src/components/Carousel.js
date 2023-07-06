@@ -79,8 +79,6 @@ const Wrapper = styled.div`
       }
     }
 
-    img {
-    }
   }
 
   .swiper-pagination {
@@ -125,6 +123,33 @@ const Wrapper = styled.div`
         width: 18px;
         height: 18px;
       }
+    }
+  }
+
+  @media (max-width: 770px) {
+    margin: 20px 0;
+    .swiper-slide {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+
+      .swiper-left {
+        align-items: center;
+        gap: 10px;
+
+        b {
+          font-size: 30px;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      margin-top: 40px;
     }
   }
 

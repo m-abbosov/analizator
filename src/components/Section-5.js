@@ -54,6 +54,19 @@ const Section5 = () => {
       date: "26.07.2021",
     },
   ];
+
+  const handleMobile = () => {
+    if (window.innerWidth < 430) {
+      return 1;
+    }
+    if (window.innerWidth < 770) {
+      return 2;
+    }
+    return 3;
+  };
+
+  console.log(handleMobile());
+
   return (
     <Wrapper className="container" id="news">
       <h2 data-aos="fade-up" className="section-title">
@@ -62,7 +75,7 @@ const Section5 = () => {
       <Swiper
         modules={[Navigation, A11y, Autoplay]}
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={handleMobile()}
         navigation
         autoplay={{
           delay: 2500,
@@ -321,6 +334,32 @@ const Wrapper = styled.div`
           background-size: cover;
           background-repeat: no-repeat;
         }
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    .card-list__item {
+      height: 550px;
+    }
+
+    .swiper {
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        &::after {
+          font-size: 12px;
+        }
+      }
+    }
+    .links {
+      flex-direction: column;
+      gap: 10px;
+      .link {
+        width: 100%;
+        font-size: 14px;
+        justify-content: space-between;
       }
     }
   }

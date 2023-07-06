@@ -82,12 +82,18 @@ const Wrapper = styled.div`
 
   @media (max-width: 1025px) {
     .about-company {
-
       padding: 20px 20px 20px 150px;
       p {
         font-size: 12px;
-
       }
+    }
+  }
+
+  @media (max-width: 430px) {
+    margin: 20px 0;
+    .about-company {
+      padding: 30px;
+      width: 100%;
     }
   }
 `;

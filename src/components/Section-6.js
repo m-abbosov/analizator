@@ -13,6 +13,15 @@ import Sec7img from "../assets/images/Sec7.png";
 import Sec8img from "../assets/images/Sec8.png";
 
 const Section6 = () => {
+  const handleMobile = () => {
+    if (window.innerWidth < 430) {
+      return 2;
+    }
+    if (window.innerWidth < 770) {
+      return 3;
+    }
+    return 4;
+  };
   return (
     <Wrapper className="container">
       <h2 data-aos="fade-up" className="section-title">
@@ -20,8 +29,8 @@ const Section6 = () => {
       </h2>
       <Swiper
         modules={[Navigation, A11y, Autoplay]}
-        spaceBetween={40}
-        slidesPerView={4}
+        spaceBetween={20}
+        slidesPerView={handleMobile()}
         navigation
         autoplay={{
           delay: 3500,
@@ -148,6 +157,30 @@ const Wrapper = styled.div`
       .slide-img {
         width: 200px;
         height: 100px;
+      }
+    }
+  }
+  @media (max-width: 430px) {
+    .slide-item {
+      .slide-img {
+        width: 150px;
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 70%;
+        }
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 30px;
+      height: 30px;
+      &::after {
+        font-size: 12px;
       }
     }
   }

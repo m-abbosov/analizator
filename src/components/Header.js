@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
   FormControl,
   FormLabel,
   Input,
@@ -28,11 +34,18 @@ import DownIcon from "../assets/icons/DownIcon.svg";
 import FlagIconRus from "../assets/icons/Flag_of_Russia 1.svg";
 import FlagIconUz from "../assets/icons/flag_Uzbekistan.svg";
 import FacebookIcon from "../assets/icons/facebook-app.svg";
+import BurgerIcon from "../assets/icons/Burger.svg";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [drawer, setDrawer] = useState(false);
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
+  const btnRef = React.useRef();
+
+  const drawerOpen = () => {
+    setDrawer((prev) => !prev);
+  };
   return (
     <Wrapper>
       <div className="header-top">
@@ -85,6 +98,13 @@ const Header = () => {
             </MenuList>
           </Menu>
         </div>
+        <img
+          src={BurgerIcon}
+          ref={btnRef}
+          onClick={drawerOpen}
+          className="burger"
+          alt=""
+        />
       </div>
       <nav className="links">
         <Link className="link" href="#">
@@ -137,6 +157,64 @@ const Header = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
+      <div className="mobile">
+        <Drawer
+          isOpen={drawer}
+          placement="right"
+          onClose={drawerOpen}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader></DrawerHeader>
+
+            <DrawerBody className="drawer-mobile">
+              <Link href="#">
+                <img src={Logo} alt="" />
+              </Link>
+              <div className="icon-box">
+                <div className="icon-box__icon">
+                  <img src={LocationIcon} alt="" />
+                </div>
+                <div className="icon-box__link">
+                  <Link href="#">г.Ташкент, Чиланзар 10 квартал, дом 3/1</Link>
+                </div>
+              </div>
+              <div className="icon-box">
+                <div className="icon-box__icon">
+                  <img src={PhoneIcon} alt="" />
+                </div>
+                <div className="icon-box__link">
+                  <Link href="tel:+998712766253">+998 71 276-62-53</Link>
+                  <Link href="tel:+998712766254">+998 71 276-62-54</Link>
+                </div>
+              </div>
+              <nav className="links">
+                <Link className="link" href="#">
+                  МАГАЗИН<div className="circle"></div>
+                </Link>
+                <Link className="link" href="#about">
+                  О КОМПАНИИ <div className="circle"></div>
+                </Link>
+                <Link className="link" href="#product">
+                  ПРОДУКЦИЯ <div className="circle"></div>
+                </Link>
+                <Link className="link" href="#services">
+                  УСЛУГИ <div className="circle"></div>
+                </Link>
+                <Link className="link" href="#news">
+                  АКЦИИ И НОВОСТИ <div className="circle"></div>
+                </Link>
+                <Link className="link" href="#">
+                  ОБРАТНАЯ СВЯЗЬ <div className="circle"></div>
+                </Link>
+              </nav>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+      </div>
     </Wrapper>
   );
 };
@@ -263,6 +341,10 @@ const Wrapper = styled.header`
         }
       }
     }
+
+    .burger {
+      display: none;
+    }
   }
 
   .links {
@@ -309,6 +391,10 @@ const Wrapper = styled.header`
         }
       }
     }
+  }
+
+  .mobile {
+    display: none;
   }
 
   @media (max-width: 1440px) {
@@ -369,7 +455,6 @@ const Wrapper = styled.header`
 
         .lang-btn {
           padding: 8px;
-
         }
       }
     }
@@ -379,6 +464,31 @@ const Wrapper = styled.header`
         padding: 15px;
         margin: 0 auto;
       }
+    }
+  }
+
+  @media (max-width: 770px) {
+    .header-top {
+      &__left {
+        display: none;
+      }
+
+      &__right {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+        width: 35px;
+        cursor: pointer;
+      }
+    }
+    .links {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
     }
   }
 `;

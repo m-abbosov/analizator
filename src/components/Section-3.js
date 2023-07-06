@@ -166,4 +166,55 @@ const Wrapper = styled.div`
       gap: 40px;
     }
   }
+
+  @media (max-width: 770px) {
+    .card-list {
+      gap: 25px;
+
+      &__item {
+        border-radius: 20px;
+        height: 350px;
+        &-img {
+          border-radius: 20px 20px 0 0;
+        }
+
+        &-content {
+          align-items: center;
+          padding: 15px;
+
+          b {
+            text-align: center;
+          }
+
+          button {
+            width: 100%;
+          }
+
+          p {
+            line-height: normal;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    .section-title {
+      margin-bottom: 20px;
+    }
+    .card-list {
+      flex-wrap: wrap;
+      gap: 50px;
+
+      &__item {
+        &-content {
+
+          button {
+            bottom: -30px;
+          }
+        }
+      }
+    }
+  }
 `;
