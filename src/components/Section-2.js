@@ -83,7 +83,6 @@ const Wrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 55px 60px;
-
     margin-top: 62px;
     &__item {
       display: flex;
@@ -135,6 +134,33 @@ const Wrapper = styled.div`
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    margin: 30px 0 50px;
+
+    .card-list {
+      margin-top: 40px;
+      gap: 30px;
+      justify-content: space-between;
+
+      &__item {
+        width: 300px;
+        gap: 10px;
+
+        &-title {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .catalog-btn {
+      margin-top: 40px;
+
+      p {
+        font-size: 20px;
+      }
     }
   }
 `;

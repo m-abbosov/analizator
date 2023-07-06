@@ -12,6 +12,7 @@ import Section3 from "./components/Section-3";
 import Section4 from "./components/Section-4";
 import Section5 from "./components/Section-5";
 import Section6 from "./components/Section-6";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Section4 />
       <Section5 />
       <Section6 />
+      <Footer />
     </Wrapper>
   );
 }

@@ -23,4 +23,9 @@ const Wrapper = styled.button`
     opacity: 0.8999999761581421;
     background: #00c9c9;
   }
+
+  @media (max-width: 1440px) {
+    padding: 15px 50px;
+    font-size: 18px;
+  }
 `;

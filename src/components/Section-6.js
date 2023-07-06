@@ -107,6 +107,16 @@ const Wrapper = styled.div`
       background: #fff;
       display: grid;
       place-content: center;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
   }
 
@@ -123,6 +133,13 @@ const Wrapper = styled.div`
       color: white;
       font-size: 20px;
       font-weight: 900;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    margin-bottom: 80px;
+    .section-title {
+      margin-bottom: 30px;
     }
   }
 `;

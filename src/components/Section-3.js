@@ -71,7 +71,8 @@ const Wrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 64px 280px 92px;
+    padding-top: 64px;
+    padding-bottom: 92px;
 
     &__item {
       position: relative;
@@ -127,6 +128,35 @@ const Wrapper = styled.div`
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .section-title {
+      margin-bottom: 30px;
+    }
+
+    .card-list {
+      padding-top: 40px;
+      padding-bottom: 50px;
+
+      &__item {
+        &-content {
+          padding: 20px 30px 40px;
+
+          b {
+            font-size: 16px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+        }
+
+        button {
+          font-size: 18px;
+        }
       }
     }
   }

@@ -135,6 +135,7 @@ const Wrapper = styled.div`
       flex-direction: column;
       align-items: center;
       gap: 13px;
+
       b {
         color: #0d4c93;
         font-size: 20px;
@@ -244,6 +245,41 @@ const Wrapper = styled.div`
         width: 30px;
         height: 30px;
         background-image: url(${ArrowIcon});
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    margin-bottom: 50px;
+    .section-title {
+      margin-bottom: 30px;
+    }
+
+    .card-list__item {
+      &-content {
+        b {
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 14px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      &-img {
+        top: 0;
+      }
+    }
+
+    .links {
+      margin-top: 40px;
+
+      .link {
+        font-size: 20px;
       }
     }
   }

@@ -64,4 +64,19 @@ const Wrapper = styled.div`
       margin-top: 20px;
     }
   }
+
+  @media (max-width: 1440px) {
+    margin: 30px 50px;
+
+    .about-company {
+      margin-top: 30px;
+
+      width: 80%;
+
+      p {
+        font-size: 18px;
+        width: 100%;
+      }
+    }
+  }
 `;

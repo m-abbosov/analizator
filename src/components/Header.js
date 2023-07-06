@@ -143,7 +143,7 @@ const Header = () => {
 
 export default Header;
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   display: flex;
   flex-direction: column;
   gap: 45px;
@@ -305,6 +305,19 @@ const Wrapper = styled.div`
         .circle {
           opacity: 1;
         }
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    padding-top: 30px;
+    margin-bottom: 40px;
+
+    .links {
+      padding: 0 20px;
+
+      .link {
+        font-size: 16px;
       }
     }
   }

@@ -78,17 +78,8 @@ const Wrapper = styled.div`
         line-height: 40px;
       }
     }
-  }
 
-  .swiper-pagination-bullet {
-    width: 25px;
-    height: 25px;
-    border-radius: 25px;
-    border: 1px solid #00c9c9;
-    background: #fff;
-
-    &-active {
-      background: #00c9c9;
+    img {
     }
   }
 
@@ -96,5 +87,44 @@ const Wrapper = styled.div`
     z-index: 99;
     position: relative;
     margin-top: 40px;
+    &-bullet {
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      border: 1px solid #00c9c9;
+      background: #fff;
+
+      &-active {
+        background: #00c9c9;
+      }
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .swiper-slide {
+      .swiper-left {
+        gap: 25px;
+        b {
+          font-size: 40px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
+
+      img {
+        width: 50%;
+      }
+    }
+
+    .swiper-pagination {
+      margin-top: 20px;
+
+      &-bullet {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 `;
