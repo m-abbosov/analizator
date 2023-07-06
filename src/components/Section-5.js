@@ -283,4 +283,45 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 1025px) {
+    .card-list__item {
+      height: 600px;
+      &-content {
+        gap: 5px;
+
+        padding: 80px 15px 30px;
+        b {
+          font-size: 16px;
+        }
+
+        span {
+          font-size: 12px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      button {
+        font-size: 14px;
+        height: 45px;
+      }
+    }
+
+    .links {
+      .link {
+        font-size: 16px;
+
+        &-arrow {
+          width: 20px;
+          height: 20px;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
 `;

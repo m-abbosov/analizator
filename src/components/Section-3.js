@@ -160,4 +160,10 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 1025px) {
+    .card-list {
+      gap: 40px;
+    }
+  }
 `;

@@ -189,7 +189,7 @@ const Wrapper = styled.header`
 
     &__right {
       display: flex;
-      align-content: center;
+      align-items: center;
       gap: 54px;
       .find-btn {
         width: 50px;
@@ -236,6 +236,8 @@ const Wrapper = styled.header`
 
         .flag-icon {
           border-radius: 50%;
+          width: 30px;
+          height: 30px;
         }
 
         p {
@@ -318,6 +320,64 @@ const Wrapper = styled.header`
 
       .link {
         font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 1025px) {
+    margin-bottom: 20px;
+    gap: 20px;
+
+    .header-top {
+      &__left {
+        gap: 10px;
+
+        .icon-box {
+          gap: 10px;
+
+          &__icon {
+            width: 40px;
+            height: 40px;
+            img {
+              width: 15px;
+            }
+          }
+
+          &__link {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .logo {
+        width: 130px;
+      }
+
+      &__right {
+        gap: 10px;
+
+        .find-btn {
+          width: 40px;
+          height: 40px;
+        }
+
+        .facebook-btn {
+          padding: 8px;
+
+          gap: 5px;
+        }
+
+        .lang-btn {
+          padding: 8px;
+
+        }
+      }
+    }
+
+    .links {
+      .link {
+        padding: 15px;
+        margin: 0 auto;
       }
     }
   }

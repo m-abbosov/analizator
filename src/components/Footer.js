@@ -328,4 +328,61 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 1025px) {
+    .footer-top {
+      &__left {
+        width: 40%;
+        &-t {
+          flex-direction: column;
+
+          .footer-contact {
+            width: 100%;
+            .icon-box {
+              &__icon {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+        }
+
+        &-b {
+          flex-direction: column;
+          align-items: flex-start;
+          p {
+            width: 100%;
+            font-size: 12px;
+          }
+        }
+      }
+
+      &__right {
+        width: 67%;
+
+        .footer-navs {
+          gap: 5px;
+          &__title {
+            font-size: 18px;
+          }
+          a {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      .copy {
+        font-size: 14px;
+      }
+
+      &__right {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 770px) {
+  }
 `;

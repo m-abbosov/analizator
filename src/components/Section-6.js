@@ -142,4 +142,13 @@ const Wrapper = styled.div`
       margin-bottom: 30px;
     }
   }
+
+  @media (max-width: 1025px) {
+    .slide-item {
+      .slide-img {
+        width: 200px;
+        height: 100px;
+      }
+    }
+  }
 `;

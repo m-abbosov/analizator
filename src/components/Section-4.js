@@ -79,4 +79,15 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 1025px) {
+    .about-company {
+
+      padding: 20px 20px 20px 150px;
+      p {
+        font-size: 12px;
+
+      }
+    }
+  }
 `;

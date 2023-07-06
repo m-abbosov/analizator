@@ -163,4 +163,15 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 1025px) {
+    margin: 30px 0 20px;
+
+    .card-list {
+      &__item {
+        width: 30%;
+        padding: 0;
+      }
+    }
+  }
 `;
